@@ -1,4 +1,4 @@
-import "./GlassButton.css";
+import "./buttons/GlassButton.css"
 
 function GlassButton({
   children,
