@@ -1,0 +1,46 @@
+.rose-button {
+  border: 1px solid var(--rose-glass-border);
+
+  background: var(--rose-glass);
+
+  backdrop-filter: blur(var(--rose-blur));
+
+  color: var(--rose-text);
+
+  border-radius: 14px;
+
+  padding: 12px 24px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.rose-button:hover:not(:disabled) {
+  transform: translateY(-4px);
+
+  background: rgba(167, 139, 250, 0.2);
+
+  box-shadow:
+    0 10px 30px rgba(167, 139, 250, 0.2);
+}
+
+.rose-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.rose-button.small {
+  padding: 8px 16px;
+}
+
+.rose-button.medium {
+  padding: 12px 24px;
+}
+
+.rose-button.large {
+  padding: 16px 32px;
+}
