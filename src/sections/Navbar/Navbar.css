@@ -1,0 +1,64 @@
+.rose-navbar {
+  width: 100%;
+  min-height: 76px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 100;
+  background: rgba(11, 11, 22, 0.75);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--glass-border);
+}
+.rose-navbar__logo {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #fff;
+  text-decoration: none;
+}
+.rose-navbar__logo span {
+  color: var(--color-primary);
+}
+.rose-navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.rose-navbar__links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+.rose-navbar__links a:hover {
+  color: var(--color-secondary);
+}
+.rose-navbar__github {
+  padding: 10px 20px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  color: white;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+.rose-navbar__github:hover {
+  background: var(--glass-bg);
+  border-color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .rose-navbar {
+    padding: 20px 5%;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .rose-navbar__links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+}/*# sourceMappingURL=Navbar.css.map */

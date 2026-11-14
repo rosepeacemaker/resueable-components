@@ -1,14 +1,11 @@
-import { GlassButton } from "./components/buttons"
+import Navbar from "./sections/Navbar/Navbar";
+
 
 function App() {
   return (
-    <GlassButton
-      variant="primary"
-      size="large"
-      onClick={() => alert("Welcome to Rose UI")}
-    >
-      Explore Rose UI
-    </GlassButton>
+    <>
+    <Navbar />
+    </>
   );
 }
 
