@@ -1,18 +1,15 @@
-import GlassButton from "./components/GlassButton"
-
+import { GlassButton } from "./components/buttons"
 
 function App() {
-  
-
   return (
-   <GlassButton 
-     variant="primary"
+    <GlassButton
+      variant="primary"
       size="large"
       onClick={() => alert("Welcome to Rose UI")}
     >
       Explore Rose UI
-   </GlassButton>
-  )
+    </GlassButton>
+  );
 }
 
-export default App
+export default App;
