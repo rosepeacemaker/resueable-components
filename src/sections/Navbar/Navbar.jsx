@@ -2,12 +2,12 @@ import "./Navbar.scss";
 
 function Navbar() {
   return (
-    <header className="rose-navbar">
+    <header className="navbar">
       <a href="/" className="rose-navbar__logo">
         ROSE<span> UI</span>
       </a>
 
-      <nav className="rose-navbar__links">
+      <nav className="navbar__links">
         <a href="#components">Components</a>
         <a href="#features">Features</a>
         <a href="#docs">Documentation</a>
@@ -18,7 +18,7 @@ function Navbar() {
         href="https://github.com/rosepeacemaker"
         target="_blank"
         rel="noreferrer"
-        className="rose-navbar__github"
+        className="navbar__github"
       >
         GitHub ↗
       </a>
