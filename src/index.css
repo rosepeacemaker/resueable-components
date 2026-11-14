@@ -8,3 +8,24 @@ body {
   background: #F1EDFA;
   color: #17151D;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+html {
+  overflow-x: clip;
+}
+
+body {
+  overflow-x: clip;
+}

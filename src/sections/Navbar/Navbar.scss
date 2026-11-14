@@ -8,9 +8,10 @@
   position: relative;
   z-index: 100;
 
-  background: rgba(11, 11, 22, 0.75);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--glass-border);
+  background: transparent;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(113, 85, 168, 0.08);
+
 
   &__logo {
     font-size: 24px;
@@ -25,21 +26,22 @@
   }
 
   &__links {
-    display: flex;
-    align-items: center;
-    gap: 32px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
 
-    a {
-      color: rgba(255, 255, 255, 0.7);
-      text-decoration: none;
-      font-size: 14px;
-      transition: color 0.3s ease;
+  a {
+    color: #514A60;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
 
-      &:hover {
-        color: var(--color-secondary);
-      }
+    &:hover {
+      color: #7155A8;
     }
   }
+}
 
   &__github {
     padding: 10px 20px;
@@ -61,24 +63,13 @@
     padding: 20px 5%;
     flex-wrap: wrap;
     gap: 20px;
-  
+
     &__links {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      a {
-         color:#514A60;
-         text-decoration: none;
-         font-size: 13px;
-             font-weight: 600;
-    letter-spacing: 0.1px;
-    transition: color 0.3s ease;
-
-             &:hover {
-      color: #7155A8;
-    }
-
-      }
+      order: 3;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
     }
   }
 }
