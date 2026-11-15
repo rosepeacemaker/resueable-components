@@ -15,8 +15,11 @@
   font-size: 24px;
   font-weight: 800;
   letter-spacing: -1px;
-  color: #fff;
+  color: #514A60;
   text-decoration: none;
+}
+.navbar__logo:visited, .navbar__logo:hover, .navbar__logo:active {
+  color: #514A60;
 }
 .navbar__logo span {
   color: var(--color-primary);

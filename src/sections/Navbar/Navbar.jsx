@@ -4,7 +4,7 @@ function Navbar() {
   return (
     <header className="navbar">
       <a href="/" className="rose-navbar__logo">
-        ROSE<span> UI</span>
+        ALPHA<span> UI</span>
       </a>
 
       <nav className="navbar__links">
