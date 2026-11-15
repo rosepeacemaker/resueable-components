@@ -7,6 +7,7 @@
   align-items: center;
   gap: 50px;
   overflow: hidden;
+   box-sizing: border-box;
   background: #F1EDFA;
 
   &__content {
@@ -173,7 +174,7 @@
 .hero {
   &__canvas {
     width: 100%;
-    height: 520px;
+    height: 460px;
     min-height: 360px;
   }
 }
@@ -181,7 +182,7 @@
 @media (max-width: 768px) {
   .hero {
     &__canvas {
-      height: 400px;
+      height: 360px;
     }
   }
 }

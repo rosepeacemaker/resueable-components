@@ -1,14 +1,8 @@
-import Hero from "./sections/Hero/Hero";
-import Navbar from "./sections/Navbar/Navbar";
 
+import Home from "./pages/Home";
 
 function App() {
-  return (
-    <>
-    <Navbar />
-    <Hero />
-    </>
-  );
+  return <Home />;
 }
 
 export default App;
