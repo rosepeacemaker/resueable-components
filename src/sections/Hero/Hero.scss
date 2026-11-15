@@ -169,3 +169,19 @@
     }
   }
 }
+
+.hero {
+  &__canvas {
+    width: 100%;
+    height: 520px;
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    &__canvas {
+      height: 400px;
+    }
+  }
+}

@@ -1,5 +1,8 @@
 
 import "./Hero.scss";
+import { Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
+import AlphaModel from "../../components/3d/AlphaModel";
 
 function Hero() {
   return (
@@ -49,12 +52,32 @@ function Hero() {
 
       </div>
 
-      <div className="hero__visual">
-        {/* Interactive 3D model will go here */}
-        <div className="hero__orb">
-          ALPHA
-        </div>
-      </div>
+      
+<div className="hero__visual">
+  <div className="hero__canvas">
+    <Canvas
+      camera={{ position: [0, 0, 5], fov: 45 }}
+      dpr={[1, 1.5]}
+    >
+      <ambientLight intensity={1.5} />
+
+      <directionalLight
+        position={[5, 5, 5]}
+        intensity={2}
+      />
+
+      <directionalLight
+        position={[-5, 2, -5]}
+        intensity={1}
+      />
+
+      <Suspense fallback={null}>
+        <AlphaModel />
+      </Suspense>
+    </Canvas>
+  </div>
+</div>
+
     </section>
   );
 }
