@@ -1,7 +1,7 @@
 
 .hero {
   min-height: calc(100vh - 76px);
-  padding: 80px 7%;
+  padding: 40px 7%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -141,6 +141,8 @@
 
 @media (max-width: 768px) {
   .hero {
+    min-height: auto;
+    padding: 50px 6%;
     grid-template-columns: 1fr;
     text-align: center;
     padding: 65px 6%;
