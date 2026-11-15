@@ -1,4 +1,4 @@
-.navbar {
+.rose-navbar {
   width: 100%;
   min-height: 76px;
   padding: 0 7%;
@@ -11,58 +11,128 @@
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(113, 85, 168, 0.08);
 }
-.navbar__logo {
+.rose-navbar__logo {
   font-size: 24px;
   font-weight: 800;
   letter-spacing: -1px;
   color: #514A60;
   text-decoration: none;
+  white-space: nowrap;
 }
-.navbar__logo:visited, .navbar__logo:hover, .navbar__logo:active {
+.rose-navbar__logo:visited, .rose-navbar__logo:hover, .rose-navbar__logo:active {
   color: #514A60;
 }
-.navbar__logo span {
+.rose-navbar__logo span {
   color: var(--color-primary);
 }
-.navbar__links {
+.rose-navbar__links {
   display: flex;
   align-items: center;
   gap: 30px;
 }
-.navbar__links a {
+.rose-navbar__links a {
   color: #514A60;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   text-decoration: none;
   transition: color 0.3s ease;
 }
-.navbar__links a:hover {
+.rose-navbar__links a:hover {
   color: #7155A8;
 }
-.navbar__github {
+.rose-navbar__github {
   padding: 10px 20px;
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(113, 85, 168, 0.2);
   border-radius: var(--radius-md);
-  color: white;
+  color: #514A60;
+  background: rgba(255, 255, 255, 0.4);
   text-decoration: none;
-  transition: 0.3s ease;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
-.navbar__github:hover {
-  background: var(--glass-bg);
+.rose-navbar__github:visited {
+  color: #514A60;
+}
+.rose-navbar__github:hover {
+  color: #7155A8;
+  background: rgba(113, 85, 168, 0.08);
   border-color: var(--color-primary);
 }
+.rose-navbar__toggle {
+  display: none;
+}
 
-@media (max-width: 768px) {
-  .navbar {
-    padding: 20px 5%;
-    flex-wrap: wrap;
-    gap: 20px;
+@media (max-width: 900px) {
+  .rose-navbar {
+    padding: 0 5%;
   }
-  .navbar__links {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
+  .rose-navbar__links {
     gap: 18px;
+  }
+  .rose-navbar__links a {
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .rose-navbar {
+    min-height: 70px;
+    padding: 12px 5%;
+    flex-wrap: wrap;
+  }
+  .rose-navbar__toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 42px;
+    height: 42px;
+    padding: 9px;
+    border: 1px solid rgba(113, 85, 168, 0.2);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.4);
+    color: #514A60;
+    cursor: pointer;
+    order: 2;
+  }
+  .rose-navbar__toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    transition: 0.3s ease;
+  }
+  .rose-navbar__toggle.active span:first-child {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .rose-navbar__toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .rose-navbar__toggle.active span:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  .rose-navbar__links {
+    display: none;
+    order: 4;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px 0;
+  }
+  .rose-navbar__links.open {
+    display: flex;
+  }
+  .rose-navbar__links a {
+    padding: 14px 8px;
+    border-bottom: 1px solid rgba(113, 85, 168, 0.1);
+  }
+  .rose-navbar__github {
+    display: none;
   }
 }/*# sourceMappingURL=Navbar.css.map */

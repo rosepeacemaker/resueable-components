@@ -1,5 +1,5 @@
 .hero {
-  min-height: calc(100svh - 76px);
+  min-height: calc(100vh - 76px);
   padding: 80px 7%;
   display: grid;
   grid-template-columns: 1fr 1fr;
