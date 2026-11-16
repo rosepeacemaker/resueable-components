@@ -8,7 +8,9 @@
   gap: 50px;
   overflow: hidden;
    box-sizing: border-box;
-  background: #F1EDFA;
+ background: var(--rose-bg);
+color: var(--rose-text);
+transition: background 0.4s ease, color 0.4s ease;
 
   &__content {
     max-width: 650px;
@@ -17,10 +19,10 @@
   &__badge {
     display: inline-block;
     padding: 10px 16px;
-    border: 1px solid rgba(113, 85, 168, 0.2);
+   border: 1px solid var(--rose-glass-border);
     border-radius: 50px;
-    background: rgba(255, 255, 255, 0.65);
-    color: #7155A8;
+   background: var(--rose-glass);
+color: var(--rose-primary);
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 1px;

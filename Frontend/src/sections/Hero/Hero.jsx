@@ -1,6 +1,5 @@
 
 import "./Hero.scss";
-import GlassButton from "../../components/buttons/GlassButton"
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import AlphaModel from "../../components/3d/AlphaModel";

@@ -15,16 +15,20 @@ body {
   overflow-x: hidden;
 }
 
+
 body {
   margin: 0;
   background:
     radial-gradient(
       circle at 20% 20%,
-      #34245d,
+      color-mix(in srgb, var(--rose-primary) 15%, transparent),
       transparent 40%
     ),
     var(--rose-bg);
 
   color: var(--rose-text);
   font-family: Inter, sans-serif;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
 }
