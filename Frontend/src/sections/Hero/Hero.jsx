@@ -56,9 +56,14 @@ function Hero() {
 <div className="hero__visual">
   <div className="hero__canvas">
     <Canvas
-      camera={{ position: [0, 0, 5], fov: 45 }}
-      dpr={[1, 1.5]}
-    >
+  camera={{
+    position: [0, 0, 7],
+    fov: 40,
+    near: 0.1,
+    far: 100
+  }}
+  dpr={[1, 1.5]}
+>
       <ambientLight intensity={1.5} />
 
       <directionalLight

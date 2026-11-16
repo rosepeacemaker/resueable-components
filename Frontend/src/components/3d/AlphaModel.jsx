@@ -1,11 +1,17 @@
 
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF, Center } from "@react-three/drei";
 
 function AlphaModel() {
   const modelRef = useRef();
+
   const { scene } = useGLTF("/models/alpha-sculpture.glb");
+
+  const clonedScene = useMemo(
+    () => scene.clone(true),
+    [scene]
+  );
 
   useFrame((state, delta) => {
     if (modelRef.current) {
@@ -17,8 +23,8 @@ function AlphaModel() {
     <Center>
       <primitive
         ref={modelRef}
-        object={scene}
-        scale={2}
+        object={clonedScene}
+        scale={1.5}
       />
     </Center>
   );
