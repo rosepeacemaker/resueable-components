@@ -24,7 +24,7 @@ function AlphaModel() {
       <primitive
         ref={modelRef}
         object={clonedScene}
-        scale={1.5}
+        scale={1.8}
       />
     </Center>
   );

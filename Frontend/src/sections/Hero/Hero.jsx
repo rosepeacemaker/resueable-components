@@ -57,8 +57,8 @@ function Hero() {
   <div className="hero__canvas">
     <Canvas
   camera={{
-    position: [0, 0, 7],
-    fov: 40,
+    position: [0, 0, 5],
+    fov: 45,
     near: 0.1,
     far: 100
   }}
