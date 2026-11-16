@@ -1,5 +1,6 @@
 
 import "./Hero.scss";
+import GlassButton from "../../components/buttons/GlassButton"
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import AlphaModel from "../../components/3d/AlphaModel";
@@ -27,7 +28,7 @@ function Hero() {
           <a href="#components" className="hero__button hero__button--primary">
             Explore Components ↗
           </a>
-
+  
           <a href="#docs" className="hero__button hero__button--secondary">
             View Documentation
           </a>
