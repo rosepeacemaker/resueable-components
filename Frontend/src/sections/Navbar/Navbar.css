@@ -63,6 +63,25 @@
   background: rgba(113, 85, 168, 0.08);
   border-color: var(--color-primary);
 }
+.rose-navbar__theme {
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--rose-glass-border);
+  border-radius: 50%;
+  background: var(--rose-glass);
+  color: var(--rose-text);
+  font-size: 27px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+.rose-navbar__theme:hover {
+  transform: rotate(20deg);
+  box-shadow: var(--rose-shadow);
+}
 .rose-navbar__toggle {
   display: none;
 }

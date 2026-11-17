@@ -2,28 +2,59 @@
 import "./Hero.scss";
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
+import { heroEntrance } from "../../animations/gsap/entrance";
 import AlphaModel from "../../components/3d/AlphaModel";
+import { useRef, useLayoutEffect } from "react"
+
+
 
 function Hero() {
+
+const heroRef = useRef(null);
+
+
+const badgeRef = useRef(null);
+const titleRef = useRef(null);
+const descriptionRef = useRef(null);
+const actionsRef = useRef(null);
+const statsRef = useRef(null);
+
+useLayoutEffect(() => {
+  const timeline = heroEntrance({
+    badge: badgeRef.current,
+    title: titleRef.current,
+    description: descriptionRef.current,
+    actions: actionsRef.current,
+    stats: statsRef.current,
+  });
+
+  return () => timeline?.revert();
+}, []);
+
+useLayoutEffect(() => {
+  const ctx = heroEntrance(heroRef.current);
+  return () => ctx?.revert?.();
+}, []);
+
   return (
-    <section className="hero" id="home">
+    <section className="hero" id="home" ref={heroRef}>
       <div className="hero__content">
 
-        <span className="hero__badge">
+       <span className="hero__badge" ref={badgeRef}>
           ✦ THE NEXT GENERATION OF REACT UI
         </span>
 
-        <h1 className="hero__title">
+      <h1 className="hero__title" ref={titleRef}>
           Build Beyond
           <span> The Ordinary.</span>
         </h1>
 
-        <p className="hero__description">
+        <p className="hero__description" ref={descriptionRef}>
           Create beautiful digital experiences with reusable
           React components, smooth animations and immersive 3D.
         </p>
 
-        <div className="hero__actions">
+        <div className="hero__actions" ref={actionsRef}>
           <a href="#components" className="hero__button hero__button--primary">
             Explore Components ↗
           </a>
@@ -33,7 +64,7 @@ function Hero() {
           </a>
         </div>
 
-        <div className="hero__stats">
+        <div className="hero__stats" ref={statsRef}>
           <div>
             <strong>30+</strong>
             <span>Components</span>

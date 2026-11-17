@@ -1,3 +1,4 @@
+@import "./styles/tokens.css";
 html,
 body,
 #root {
@@ -5,8 +6,9 @@ body,
 }
 
 body {
-  background: #F1EDFA;
-  color: #17151D;
+  background: var(--rose-bg);
+  color: var(--rose-text);
+  transition: background 0.4s ease, color 0.4s ease;
 }
 *,
 *::before,
