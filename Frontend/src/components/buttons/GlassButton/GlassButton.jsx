@@ -8,15 +8,29 @@ function GlassButton({
   type = "button",
   onClick,
   disabled = false,
+  loading = false,
+  className = "",
+  ...rest
 }) {
+  const buttonClasses = [
+    "rose-button",
+    variant,
+    size,
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
     <button
-      className={`rose-button ${variant} ${size}`}
+      className={buttonClasses}
       type={type}
       onClick={onClick}
-      disabled={disabled}
+      disabled={disabled || loading}
+      aria-busy={loading}
+      {...rest}
     >
-      {children}
+      {loading ? "Loading..." : children}
     </button>
   );
 }

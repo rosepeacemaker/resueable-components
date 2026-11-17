@@ -74,7 +74,7 @@
 .hero__button--secondary {
   color: var(--rose-primary);
   background: transparent;
-  border: 1px solid var(--rose-glass-border);
+  border: 1px solid #7155A8;
 }
 .hero__button--secondary:hover {
   background: var(--rose-glass);
