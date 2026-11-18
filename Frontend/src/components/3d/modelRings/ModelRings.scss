@@ -1,19 +1,16 @@
 
 .model-rings {
-    .model-rings {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 0;
 
-  // Keep your existing properties below
-}
-  position: absolute;
   width: min(520px, 90%);
   aspect-ratio: 1;
+
   display: grid;
   place-items: center;
+
   pointer-events: none;
   z-index: 0;
 

@@ -1,0 +1,38 @@
+.alpha-emblem {
+  position: relative;
+  width: 150px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.alpha-emblem__circle {
+  position: absolute;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  border: 1.5px solid;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 18px rgba(167, 139, 250, 0.12);
+}
+.alpha-emblem__circle--one {
+  left: 5px;
+  border-color: rgba(167, 139, 250, 0.85);
+  background: rgba(167, 139, 250, 0.16);
+}
+.alpha-emblem__circle--two {
+  left: 37px;
+  border-color: rgba(133, 133, 143, 0.8);
+  background: rgba(133, 133, 143, 0.13);
+}
+.alpha-emblem__circle--three {
+  left: 69px;
+  border-color: rgba(245, 245, 247, 0.85);
+  background: rgba(245, 245, 247, 0.16);
+}
+
+[data-theme=dark] .alpha-emblem__circle {
+  box-shadow: 0 0 22px rgba(167, 139, 250, 0.2);
+}/*# sourceMappingURL=AlphEmblem.css.map */
