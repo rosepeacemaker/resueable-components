@@ -6,7 +6,6 @@ import { heroEntrance } from "../../animations/gsap/entrance";
 import AlphaModel from "../../components/3d/AlphaModel";
 import { useRef, useLayoutEffect } from "react"
 import ModelRings from "../../components/3d/modelRings/ModelRings";
-import AlphaEmblem from "../../components/3d/Aplhaemblem/AlphaEmblem";
 
 
 function Hero() {
@@ -88,7 +87,7 @@ useLayoutEffect(() => {
 
 <div className="hero__visual">
   <ModelRings />
-    <AlphaEmblem />
+    
   <div className="hero__canvas">
     <Canvas
       camera={{ position: [0, 0, 5], fov: 45, near: 0.1, far: 100 }}

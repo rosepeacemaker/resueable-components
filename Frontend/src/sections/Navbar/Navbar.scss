@@ -50,6 +50,15 @@
   align-items: baseline;
   gap: 5px;
 }
+&__logo:hover &__alpha {
+  font-family: "Trebuchet MS", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+&__alpha {
+  transition: font-family 0.3s ease, letter-spacing 0.3s ease;
+}
 
 &__alpha {
   font-family: Georgia, serif;

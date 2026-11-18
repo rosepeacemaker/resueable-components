@@ -1,0 +1,71 @@
+.alpha-emblem {
+  position: relative;
+  width: 42px;
+  height: 36px;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  top: 12%;
+  right: 4%;
+  z-index: 2;
+}
+.alpha-emblem__circle {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 18px rgba(167, 139, 250, 0.12);
+  transition: transform 0.4s ease;
+}
+.alpha-emblem__circle--one {
+  left: 0;
+  border-color: rgb(167, 139, 250);
+  background: rgba(167, 139, 250, 0.28);
+}
+.alpha-emblem__circle--two {
+  left: 9px;
+  border-color: rgb(133, 133, 143);
+  background: rgba(133, 133, 143, 0.24);
+}
+.alpha-emblem__circle--three {
+  left: 18px;
+  border-color: rgb(190, 190, 205);
+  background: rgba(190, 190, 205, 0.32);
+}
+
+[data-theme=dark] .alpha-emblem__circle {
+  box-shadow: 0 0 22px rgba(167, 139, 250, 0.2);
+}
+
+.rose-navbar__logo:hover .alpha-emblem__circle--one {
+  transform: translate(-4px, -3px);
+}
+
+.rose-navbar__logo:hover .alpha-emblem__circle--two {
+  transform: translateY(4px);
+}
+
+.rose-navbar__logo:hover .alpha-emblem__circle--three {
+  transform: translate(4px, -3px);
+}
+
+[data-theme=light] .alpha-emblem__circle--one {
+  background: rgba(167, 139, 250, 0.42);
+  border-color: #9672e8;
+  box-shadow: 0 0 12px rgba(167, 139, 250, 0.35);
+}
+
+[data-theme=light] .alpha-emblem__circle--two {
+  background: rgba(133, 133, 143, 0.35);
+  border-color: #85858f;
+}
+
+[data-theme=light] .alpha-emblem__circle--three {
+  background: rgba(220, 220, 232, 0.75);
+  border-color: #aaaabd;
+}/*# sourceMappingURL=AlphaEmblem.css.map */
