@@ -1,0 +1,155 @@
+.sparkle-particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sparkle {
+  position: absolute;
+  display: block;
+  animation: sparkleFloat 4s ease-in-out infinite;
+}
+
+.sparkle--dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #C4B5FD;
+  box-shadow: 0 0 10px #A78BFA, 0 0 18px rgba(167, 139, 250, 0.5);
+}
+
+.sparkle--one {
+  top: 8%;
+  left: 8%;
+}
+
+.sparkle--two {
+  top: 18%;
+  right: 8%;
+}
+
+.sparkle--three {
+  bottom: 8%;
+  left: 18%;
+}
+
+.sparkle--four {
+  top: 58%;
+  right: 5%;
+}
+
+.sparkle--five {
+  top: 38%;
+  right: 18%;
+}
+
+.sparkle--six {
+  bottom: 15%;
+  left: 45%;
+}
+
+.sparkle--seven {
+  top: 12%;
+  left: 42%;
+}
+
+.sparkle--eight {
+  bottom: 35%;
+  left: 5%;
+}
+
+.sparkle--nine {
+  top: 48%;
+  left: 25%;
+}
+
+.sparkle--ten {
+  bottom: 8%;
+  right: 12%;
+}
+
+.sparkle--star {
+  color: #C4B5FD;
+  font-size: 17px;
+  text-shadow: 0 0 10px rgba(167, 139, 250, 0.8);
+  animation: sparkleTwinkle 3s ease-in-out infinite;
+}
+
+.sparkle--seven {
+  top: 24%;
+  right: 22%;
+}
+
+.sparkle--eight {
+  bottom: 28%;
+  left: 10%;
+  color: #F5F5F7;
+  animation-delay: 1s;
+}
+
+.sparkle--nine {
+  top: 55%;
+  left: 8%;
+  font-size: 13px;
+  animation-delay: 1.5s;
+}
+
+.sparkle--ten {
+  bottom: 15%;
+  right: 22%;
+  animation-delay: 2s;
+}
+
+@keyframes sparkleFloat {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translateY(-12px);
+    opacity: 1;
+  }
+}
+@keyframes sparkleTwinkle {
+  0%, 100% {
+    transform: scale(0.7) rotate(0deg);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scale(1.2) rotate(20deg);
+    opacity: 1;
+  }
+}
+.sparkle-particles::before,
+.sparkle-particles::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+}
+
+.sparkle-particles::before {
+  background-image: radial-gradient(2px 2px at 5% 8%, #fff 95%, transparent), radial-gradient(2px 2px at 15% 25%, #C4B5FD 95%, transparent), radial-gradient(1px 1px at 25% 12%, #fff 95%, transparent), radial-gradient(2px 2px at 35% 35%, #A78BFA 95%, transparent), radial-gradient(1px 1px at 45% 10%, #fff 95%, transparent), radial-gradient(2px 2px at 55% 22%, #C4B5FD 95%, transparent), radial-gradient(1px 1px at 65% 8%, #fff 95%, transparent), radial-gradient(2px 2px at 75% 30%, #A78BFA 95%, transparent), radial-gradient(1px 1px at 85% 15%, #fff 95%, transparent), radial-gradient(2px 2px at 95% 40%, #C4B5FD 95%, transparent), radial-gradient(1px 1px at 10% 55%, #fff 95%, transparent), radial-gradient(2px 2px at 20% 75%, #A78BFA 95%, transparent), radial-gradient(1px 1px at 30% 60%, #fff 95%, transparent), radial-gradient(2px 2px at 40% 85%, #C4B5FD 95%, transparent), radial-gradient(1px 1px at 50% 65%, #fff 95%, transparent), radial-gradient(2px 2px at 60% 90%, #A78BFA 95%, transparent), radial-gradient(1px 1px at 70% 70%, #fff 95%, transparent), radial-gradient(2px 2px at 80% 85%, #C4B5FD 95%, transparent), radial-gradient(1px 1px at 90% 60%, #fff 95%, transparent);
+  opacity: 0.8;
+  animation: starSkyTwinkle 5s ease-in-out infinite alternate;
+}
+
+.sparkle-particles::after {
+  background-image: radial-gradient(1px 1px at 8% 35%, #C4B5FD 95%, transparent), radial-gradient(2px 2px at 18% 90%, #fff 95%, transparent), radial-gradient(1px 1px at 28% 42%, #fff 95%, transparent), radial-gradient(2px 2px at 38% 18%, #C4B5FD 95%, transparent), radial-gradient(1px 1px at 48% 48%, #fff 95%, transparent), radial-gradient(2px 2px at 58% 55%, #A78BFA 95%, transparent), radial-gradient(1px 1px at 68% 38%, #fff 95%, transparent), radial-gradient(2px 2px at 78% 55%, #C4B5FD 95%, transparent), radial-gradient(1px 1px at 88% 90%, #fff 95%, transparent), radial-gradient(2px 2px at 98% 75%, #A78BFA 95%, transparent);
+  opacity: 0.55;
+  animation: starSkyTwinkle 7s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes starSkyTwinkle {
+  from {
+    opacity: 0.35;
+  }
+  to {
+    opacity: 0.95;
+  }
+}/*# sourceMappingURL=SparkleParticles.css.map */

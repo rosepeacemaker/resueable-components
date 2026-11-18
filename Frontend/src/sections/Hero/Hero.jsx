@@ -6,6 +6,7 @@ import { heroEntrance } from "../../animations/gsap/entrance";
 import AlphaModel from "../../components/3d/AlphaModel";
 import { useRef, useLayoutEffect } from "react"
 import gsap from "gsap";
+import SparkleParticles from "../../components/3d/SparkleParticles/SparkleParticles";
 import ModelRings from "../../components/3d/modelRings/ModelRings";
 
 
@@ -104,6 +105,7 @@ useLayoutEffect(() => {
 
 <div className="hero__visual">
   <ModelRings />
+  <SparkleParticles />
     <div className="hero__floating-label">
   ALPHA UI
 </div>
