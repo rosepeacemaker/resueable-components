@@ -6,6 +6,7 @@ import { heroEntrance } from "../../animations/gsap/entrance";
 import AlphaModel from "../../components/3d/AlphaModel";
 import { useRef, useLayoutEffect } from "react"
 import gsap from "gsap";
+import HalfReveal from "../../components/HalfReveal/HalfReveal";
 import SparkleParticles from "../../components/3d/SparkleParticles/SparkleParticles";
 import ModelRings from "../../components/3d/modelRings/ModelRings";
 
@@ -106,6 +107,11 @@ useLayoutEffect(() => {
 
 <div className="hero__visual">
 
+<HalfReveal
+  className="hero__halftone"
+  image="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=1200"
+  alt="Abstract background"
+/>
   <ModelRings layer="back" />
 
   <SparkleParticles />

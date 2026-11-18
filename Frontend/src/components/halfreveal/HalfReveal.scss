@@ -4,10 +4,10 @@
   width: 100%;
   overflow: hidden;
   isolation: isolate;
-  &:hover {
-  .half-reveal__overlay {
-    opacity: 0;
-  }
+
+  &__overlay.is-revealed {
+  opacity: 0;
+  transform: scale(1.15);
 }
 
   &__image {
@@ -18,21 +18,32 @@
   }
 
   &__overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    transition: opacity 0.7s ease;
-opacity: 1;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 
-    background-color: var(--rose-bg);
+  background-color: var(--rose-bg);
 
-    background-image: radial-gradient(
-      circle,
-      var(--rose-text) 1.5px,
-      transparent 1.8px
-    );
+  background-image: radial-gradient(
+    circle,
+    var(--rose-text) 1.5px,
+    transparent 1.8px
+  );
 
-    background-size: 7px 7px;
-  }
-  
+  background-size: 6px 6px;
+  background-position: center;
+
+  opacity: 1;
+  transform: scale(1);
+  transform-origin: center;
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+&__overlay.is-revealed {
+  opacity: 0;
+  transform: scale(1.15);
+}
 }

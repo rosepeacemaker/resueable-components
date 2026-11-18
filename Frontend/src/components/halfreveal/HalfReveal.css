@@ -4,8 +4,9 @@
   overflow: hidden;
   isolation: isolate;
 }
-.half-reveal:hover .half-reveal__overlay {
+.half-reveal__overlay.is-revealed {
   opacity: 0;
+  transform: scale(1.15);
 }
 .half-reveal__image {
   display: block;
@@ -18,9 +19,16 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  transition: opacity 0.7s ease;
-  opacity: 1;
   background-color: var(--rose-bg);
   background-image: radial-gradient(circle, var(--rose-text) 1.5px, transparent 1.8px);
-  background-size: 7px 7px;
+  background-size: 6px 6px;
+  background-position: center;
+  opacity: 1;
+  transform: scale(1);
+  transform-origin: center;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.half-reveal__overlay.is-revealed {
+  opacity: 0;
+  transform: scale(1.15);
 }/*# sourceMappingURL=HalfReveal.css.map */
