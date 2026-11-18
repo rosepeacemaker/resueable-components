@@ -12,18 +12,46 @@
   border-bottom: 1px solid rgba(113, 85, 168, 0.08);
 }
 .rose-navbar__logo {
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: -1px;
-  color: #514A60;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--rose-text);
   text-decoration: none;
-  white-space: nowrap;
+  perspective: 500px;
+  transition: transform 0.35s ease;
 }
-.rose-navbar__logo:visited, .rose-navbar__logo:hover, .rose-navbar__logo:active {
-  color: #514A60;
+.rose-navbar__logo:hover {
+  transform: perspective(500px) rotateY(-10deg) rotateX(5deg) translateY(-2px);
 }
-.rose-navbar__logo span {
-  color: var(--color-primary);
+.rose-navbar__logo:active {
+  transform: perspective(500px) rotateY(8deg) scale(0.96);
+}
+.rose-navbar__mark {
+  width: 35px;
+  height: 35px;
+  color: var(--rose-primary);
+  transition: transform 0.4s ease;
+}
+.rose-navbar__logo:hover .rose-navbar__mark {
+  transform: rotate(-8deg) scale(1.08);
+}
+.rose-navbar__brand {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+.rose-navbar__alpha {
+  font-family: Georgia, serif;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--rose-text);
+}
+.rose-navbar__ui {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--rose-primary);
 }
 .rose-navbar__links {
   display: flex;
@@ -31,14 +59,14 @@
   gap: 30px;
 }
 .rose-navbar__links a {
-  color: #514A60;
+  color: var(--rose-text);
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 .rose-navbar__links a:hover {
-  color: #7155A8;
+  color: var(--rose-primary);
 }
 .rose-navbar__github {
   padding: 10px 20px;
@@ -77,6 +105,23 @@
   align-items: center;
   justify-content: center;
   line-height: 1;
+}
+.rose-navbar__theme .theme-icon {
+  width: 25px;
+  height: 25px;
+  stroke-width: 1.8;
+  transition: transform 0.4s ease;
+}
+.rose-navbar__theme .moon-icon {
+  color: #C4B5FD;
+  filter: drop-shadow(0 0 5px rgba(196, 181, 253, 0.6));
+}
+.rose-navbar__theme .sun-icon {
+  color: #A18BCB;
+  filter: drop-shadow(0 0 5px rgba(161, 139, 203, 0.45));
+}
+.rose-navbar__theme:hover .theme-icon {
+  transform: rotate(25deg) scale(1.12);
 }
 .rose-navbar__theme:hover {
   transform: rotate(20deg);

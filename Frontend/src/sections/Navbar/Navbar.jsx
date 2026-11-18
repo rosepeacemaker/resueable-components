@@ -1,6 +1,10 @@
 
 import { useState, useEffect } from "react";
 import "./Navbar.scss";
+import { MoonStar, Sun } from "lucide-react";
+
+
+
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,10 +27,32 @@ const toggleTheme = () => {
 
   return (
     <header className="rose-navbar">
-      <a href="/" className="rose-navbar__logo" onClick={closeMenu}>
-        ALPHA<span> UI</span>
-      </a>
+    <a href="/" className="rose-navbar__logo" onClick={closeMenu}>
+  <svg
+    className="rose-navbar__mark"
+    viewBox="0 0 40 40"
+    fill="none"
+    aria-hidden="true"
+  >
+    <path
+      d="M20 4L36 34H4L20 4Z"
+      stroke="currentColor"
+      strokeWidth="3"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M14 25H26"
+      stroke="#A18BCB"
+      strokeWidth="3"
+      strokeLinecap="round"
+    />
+  </svg>
 
+  <span className="rose-navbar__brand">
+    <span className="rose-navbar__alpha">ALPHA</span>
+    <span className="rose-navbar__ui">UI</span>
+  </span>
+</a>
       <button
         className={`rose-navbar__toggle ${menuOpen ? "active" : ""}`}
         onClick={() => setMenuOpen(!menuOpen)}
@@ -49,7 +75,11 @@ const toggleTheme = () => {
   onClick={toggleTheme}
   aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
 >
-  {theme === "light" ? "☾" : "☀"}
+ {theme === "dark" ? (
+  <MoonStar className="theme-icon moon-icon" />
+) : (
+  <Sun className="theme-icon sun-icon" />
+)}
 </button>
 
       <a
