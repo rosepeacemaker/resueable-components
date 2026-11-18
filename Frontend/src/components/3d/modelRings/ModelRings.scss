@@ -51,3 +51,11 @@
   z-index: 2;
   clip-path: inset(50% 0 0 0);
 }
+.model-rings--back {
+  z-index: 0;
+}
+
+.model-rings--front {
+  z-index: 2;
+  clip-path: inset(50% 0 0 0);
+}

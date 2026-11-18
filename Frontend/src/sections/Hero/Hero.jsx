@@ -103,64 +103,63 @@ useLayoutEffect(() => {
 
       
 
+
 <div className="hero__visual">
+
   <ModelRings layer="back" />
-<SparkleParticles />
 
-<div className="hero__canvas" ref={modelVisualRef}>
-  {/* Tumhara existing Canvas bilkul same rahega */}
-</div>
-
-<ModelRings layer="front" />
   <SparkleParticles />
-    <div className="hero__floating-label">
-  ALPHA UI
-</div>
-  <div className="hero__canvas"  ref={modelVisualRef}>
+
+  <div className="hero__floating-label">
+    ALPHA UI
+  </div>
+
+  <div className="hero__canvas" ref={modelVisualRef}>
     <Canvas
       camera={{ position: [0, 0, 5], fov: 45, near: 0.1, far: 100 }}
       dpr={[1, 1.5]}
     >
+      <ambientLight intensity={0.8} />
 
-<ambientLight intensity={0.8} />
+      <directionalLight position={[5, 5, 5]} intensity={2.2} />
 
-<directionalLight
-  position={[5, 5, 5]}
-  intensity={2.2}
-/>
+      <directionalLight
+        position={[-5, 2, -5]}
+        intensity={1.2}
+        color="#A78BFA"
+      />
 
-<directionalLight
-  position={[-5, 2, -5]}
-  intensity={1.2}
-  color="#A78BFA"
-/>
+      <pointLight
+        position={[0, 2, 3]}
+        intensity={1.5}
+        color="#C4B5FD"
+        distance={8}
+      />
 
-<pointLight
-  position={[0, 2, 3]}
-  intensity={1.5}
-  color="#C4B5FD"
-  distance={8}
-/>
+      <pointLight
+        position={[-3, -2, -2]}
+        intensity={0.8}
+        color="#A78BFA"
+        distance={7}
+      />
 
-<pointLight
-  position={[-3, -2, -2]}
-  intensity={0.8}
-  color="#A78BFA"
-  distance={7}
-/>
-<pointLight
-  position={[0, 0, -3]}
-  intensity={1.2}
-  color="#A78BFA"
-  distance={6}
-/>
+      <pointLight
+        position={[0, 0, -3]}
+        intensity={1.2}
+        color="#A78BFA"
+        distance={6}
+      />
 
       <Suspense fallback={null}>
         <AlphaModel />
       </Suspense>
     </Canvas>
   </div>
+
+  <ModelRings layer="front" />
+
 </div>
+
 
 
     </section>
