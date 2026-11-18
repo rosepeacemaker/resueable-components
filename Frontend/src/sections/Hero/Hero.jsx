@@ -5,7 +5,7 @@ import { Canvas } from "@react-three/fiber";
 import { heroEntrance } from "../../animations/gsap/entrance";
 import AlphaModel from "../../components/3d/AlphaModel";
 import { useRef, useLayoutEffect } from "react"
-
+import ModelRings from "../../components/3d/modelRings/ModelRings";
 
 
 function Hero() {
@@ -87,20 +87,13 @@ useLayoutEffect(() => {
 <div className="hero__visual">
   <div className="hero__canvas">
     <Canvas
-  camera={{
-    position: [0, 0, 5],
-    fov: 45,
-    near: 0.1,
-    far: 100
-  }}
-  dpr={[1, 1.5]}
->
-      <ambientLight intensity={1.5} />
+      camera={{ position: [0, 0, 5], fov: 45, near: 0.1, far: 100 }}
+      dpr={[1, 1.5]}
+    >
 
-      <directionalLight
-        position={[5, 5, 5]}
-        intensity={2}
-      />
+      <ambientLight intensity={1.5} />
+      <directionalLight position={[5, 5, 5]} intensity={2} />
+      <directionalLight position={[-5, 2, -5]} intensity={1} />
 
       <directionalLight
         position={[-5, 2, -5]}

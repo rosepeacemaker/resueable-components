@@ -1,0 +1,48 @@
+
+.model-rings {
+    .model-rings {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+
+  // Keep your existing properties below
+}
+  position: absolute;
+  width: min(520px, 90%);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  z-index: 0;
+
+  &__ring {
+    position: absolute;
+    border: 1px solid rgba(113, 85, 168, 0.22);
+    border-radius: 50%;
+    box-shadow: 0 0 18px rgba(167, 139, 250, 0.12);
+
+    &--outer {
+      width: 100%;
+      height: 100%;
+    }
+
+    &--middle {
+      width: 78%;
+      height: 78%;
+      border-color: rgba(220, 100, 220, 0.25);
+    }
+
+    &--inner {
+      width: 56%;
+      height: 56%;
+      border-color: rgba(113, 85, 168, 0.30);
+    }
+  }
+}
+
+[data-theme="dark"] .model-rings__ring {
+  border-color: rgba(167, 139, 250, 0.30);
+  box-shadow: 0 0 20px rgba(167, 139, 250, 0.18);
+}
