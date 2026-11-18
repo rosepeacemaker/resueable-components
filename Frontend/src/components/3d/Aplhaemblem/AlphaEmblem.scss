@@ -7,6 +7,10 @@
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  position: absolute;
+top: 12%;
+right: 4%;
+z-index: 2;
 
   &__circle {
     position: absolute;
