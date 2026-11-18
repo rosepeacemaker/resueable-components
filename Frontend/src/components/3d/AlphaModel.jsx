@@ -8,10 +8,39 @@ function AlphaModel() {
 
   const { scene } = useGLTF("/models/alpha-sculpture.glb");
 
-  const clonedScene = useMemo(
-    () => scene.clone(true),
-    [scene]
-  );
+  const clonedScene = useMemo(() => {
+  const clone = scene.clone(true);
+
+  clone.traverse((child) => {
+    if (!child.isMesh) return;
+
+    child.castShadow = true;
+    child.receiveShadow = true;
+
+    const updateMaterial = (material) => {
+      const updatedMaterial = material.clone();
+
+      if (
+        updatedMaterial.isMeshStandardMaterial ||
+        updatedMaterial.isMeshPhysicalMaterial
+      ) {
+        updatedMaterial.roughness = 0.3;
+        updatedMaterial.metalness = 0.08;
+        updatedMaterial.needsUpdate = true;
+      }
+
+      return updatedMaterial;
+    };
+
+    if (Array.isArray(child.material)) {
+      child.material = child.material.map(updateMaterial);
+    } else if (child.material) {
+      child.material = updateMaterial(child.material);
+    }
+  });
+
+  return clone;
+}, [scene]);
 
   useFrame((state, delta) => {
     if (!modelRef.current) return;

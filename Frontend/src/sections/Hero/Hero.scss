@@ -34,15 +34,14 @@ color: var(--rose-primary);
   line-height: 1.02;
   letter-spacing: -4px;
   color: var(--rose-text);
-  color: var(--rose-primary);
 
-span {
-  display: block;
-  color: #7155A8;
-  background: none;
-  -webkit-text-fill-color: #7155A8;
-}
+  span {
+    display: block;
+    color: var(--rose-primary);
+    background: none;
+    -webkit-text-fill-color: var(--rose-primary);
   }
+}
 
  &__description {
   max-width: 520px;
@@ -115,6 +114,35 @@ span {
   }
 
   &__visual {
+  position: relative;
+  isolation: isolate;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: min(580px, 95%);
+    aspect-ratio: 1;
+    border-radius: 50%;
+
+  background: radial-gradient(
+  circle,
+  rgba(113, 85, 168, 0.38) 0%,
+  rgba(220, 100, 220, 0.28) 32%,
+  rgba(161, 139, 203, 0.18) 52%,
+  transparent 72%
+);
+
+    filter: blur(25px);
+    z-index: 0;
+    pointer-events: none;
+ 
+}
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -144,6 +172,16 @@ span {
     font-weight: 800;
     letter-spacing: 5px;
   }
+}
+// hero block k bahir //
+[data-theme="dark"] .hero__visual::before {
+  background: radial-gradient(
+    circle,
+    rgba(167, 139, 250, 0.30) 0%,
+    rgba(220, 100, 220, 0.18) 35%,
+    rgba(167, 139, 250, 0.08) 55%,
+    transparent 72%
+  );
 }
 
 @media (max-width: 768px) {
@@ -179,6 +217,8 @@ span {
 
 .hero {
   &__canvas {
+    position: relative;
+z-index: 1;
     width: 100%;
     height: 460px;
     min-height: 360px;
