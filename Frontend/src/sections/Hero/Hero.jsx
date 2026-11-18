@@ -104,7 +104,14 @@ useLayoutEffect(() => {
       
 
 <div className="hero__visual">
-  <ModelRings />
+  <ModelRings layer="back" />
+<SparkleParticles />
+
+<div className="hero__canvas" ref={modelVisualRef}>
+  {/* Tumhara existing Canvas bilkul same rahega */}
+</div>
+
+<ModelRings layer="front" />
   <SparkleParticles />
     <div className="hero__floating-label">
   ALPHA UI

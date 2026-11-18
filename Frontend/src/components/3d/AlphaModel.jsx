@@ -68,7 +68,7 @@ function AlphaModel() {
       <primitive
         ref={modelRef}
         object={clonedScene}
-        scale={1.8}
+        scale={1.85}
       />
     </Center>
   );

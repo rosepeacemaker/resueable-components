@@ -34,4 +34,13 @@
 [data-theme=dark] .model-rings__ring {
   border-color: rgba(167, 139, 250, 0.3);
   box-shadow: 0 0 20px rgba(167, 139, 250, 0.18);
+}
+
+.model-rings--back {
+  z-index: 0;
+}
+
+.model-rings--front {
+  z-index: 2;
+  clip-path: inset(50% 0 0 0);
 }/*# sourceMappingURL=ModelRings.css.map */

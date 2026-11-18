@@ -1,9 +1,9 @@
 
 import "./ModelRings.scss";
 
-function ModelRings() {
+function ModelRings({ layer = "back" }) {
   return (
-    <div className="model-rings">
+    <div className={`model-rings model-rings--${layer}`}>
       <div className="model-rings__ring model-rings__ring--outer" />
       <div className="model-rings__ring model-rings__ring--middle" />
       <div className="model-rings__ring model-rings__ring--inner" />

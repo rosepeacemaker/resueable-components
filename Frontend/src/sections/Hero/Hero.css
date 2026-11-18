@@ -116,11 +116,10 @@
   z-index: -1;
   pointer-events: none;
 }
-.hero__visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
+.hero__visual .model-rings {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .hero__orb {
   width: min(390px, 80vw);
@@ -164,6 +163,12 @@
     letter-spacing: -2px;
   }
 }
+.model-rings {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .hero__canvas {
   position: relative;
   z-index: 1;

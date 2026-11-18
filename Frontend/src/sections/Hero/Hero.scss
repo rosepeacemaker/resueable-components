@@ -113,7 +113,8 @@ color: var(--rose-primary);
     }
   }
 
-  &__visual {
+ 
+&__visual {
   position: relative;
   isolation: isolate;
 
@@ -129,25 +130,26 @@ color: var(--rose-primary);
     aspect-ratio: 1;
     border-radius: 50%;
 
-  background: radial-gradient(
-  circle,
-  rgba(113, 85, 168, 0.38) 0%,
-  rgba(220, 100, 220, 0.28) 32%,
-  rgba(161, 139, 203, 0.18) 52%,
-  transparent 72%
-);
+    background: radial-gradient(
+      circle,
+      rgba(113, 85, 168, 0.38) 0%,
+      rgba(220, 100, 220, 0.28) 32%,
+      rgba(161, 139, 203, 0.18) 52%,
+      transparent 72%
+    );
 
     filter: blur(25px);
     z-index: -1;
     pointer-events: none;
- 
+  }
+
+  .model-rings {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 0;
-  }
 
   &__orb {
     width: min(390px, 80vw);
@@ -214,7 +216,12 @@ color: var(--rose-primary);
     }
   }
 }
-
+ .model-rings {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  
 .hero {
   &__canvas {
     position: relative;
