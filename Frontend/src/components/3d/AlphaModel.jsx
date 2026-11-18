@@ -24,8 +24,8 @@ function AlphaModel() {
         updatedMaterial.isMeshStandardMaterial ||
         updatedMaterial.isMeshPhysicalMaterial
       ) {
-        updatedMaterial.roughness = 0.3;
-        updatedMaterial.metalness = 0.08;
+        updatedMaterial.roughness = 0.2;
+        updatedMaterial.metalness = 0.18;
         updatedMaterial.needsUpdate = true;
       }
 

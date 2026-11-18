@@ -5,6 +5,7 @@ import { Canvas } from "@react-three/fiber";
 import { heroEntrance } from "../../animations/gsap/entrance";
 import AlphaModel from "../../components/3d/AlphaModel";
 import { useRef, useLayoutEffect } from "react"
+import gsap from "gsap";
 import ModelRings from "../../components/3d/modelRings/ModelRings";
 
 
@@ -12,7 +13,7 @@ function Hero() {
 
 const heroRef = useRef(null);
 
-
+const modelVisualRef = useRef(null);
 const badgeRef = useRef(null);
 const titleRef = useRef(null);
 const descriptionRef = useRef(null);
@@ -32,8 +33,24 @@ useLayoutEffect(() => {
 }, []);
 
 useLayoutEffect(() => {
-  const ctx = heroEntrance(heroRef.current);
-  return () => ctx?.revert?.();
+  const ctx = gsap.context(() => {
+    gsap.fromTo(
+      modelVisualRef.current,
+      {
+        opacity: 0,
+        y: 25,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power3.out",
+        delay: 0.3,
+      }
+    );
+  }, heroRef);
+
+  return () => ctx.revert();
 }, []);
 
   return (
@@ -87,15 +104,47 @@ useLayoutEffect(() => {
 
 <div className="hero__visual">
   <ModelRings />
-    
-  <div className="hero__canvas">
+    <div className="hero__floating-label">
+  ALPHA UI
+</div>
+  <div className="hero__canvas"  ref={modelVisualRef}>
     <Canvas
       camera={{ position: [0, 0, 5], fov: 45, near: 0.1, far: 100 }}
       dpr={[1, 1.5]}
     >
-      <ambientLight intensity={1.5} />
-      <directionalLight position={[5, 5, 5]} intensity={2} />
-      <directionalLight position={[-5, 2, -5]} intensity={1} />
+
+<ambientLight intensity={0.8} />
+
+<directionalLight
+  position={[5, 5, 5]}
+  intensity={2.2}
+/>
+
+<directionalLight
+  position={[-5, 2, -5]}
+  intensity={1.2}
+  color="#A78BFA"
+/>
+
+<pointLight
+  position={[0, 2, 3]}
+  intensity={1.5}
+  color="#C4B5FD"
+  distance={8}
+/>
+
+<pointLight
+  position={[-3, -2, -2]}
+  intensity={0.8}
+  color="#A78BFA"
+  distance={7}
+/>
+<pointLight
+  position={[0, 0, -3]}
+  intensity={1.2}
+  color="#A78BFA"
+  distance={6}
+/>
 
       <Suspense fallback={null}>
         <AlphaModel />
