@@ -106,12 +106,6 @@ useLayoutEffect(() => {
 
 
 <div className="hero__visual">
-
-<HalfReveal
-  className="hero__halftone"
-  image="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=1200"
-  alt="Abstract background"
-/>
   <ModelRings layer="back" />
 
   <SparkleParticles />
@@ -121,6 +115,12 @@ useLayoutEffect(() => {
   </div>
 
   <div className="hero__canvas" ref={modelVisualRef}>
+    
+<HalfReveal
+  className="hero__halftone"
+  image="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=1200"
+  alt="Abstract background"
+/>
     <Canvas
       camera={{ position: [0, 0, 5], fov: 45, near: 0.1, far: 100 }}
       dpr={[1, 1.5]}
