@@ -21,7 +21,7 @@ function HalfReveal({ className = "" }) {
   const generatePath = () => {
     const { angle, x, y } = deform;
     const points = 100;
-    const radius = 260;
+    const radius = 300;
     const cx = 300;
     const cy = 300;
     const coords = [];
@@ -34,7 +34,7 @@ function HalfReveal({ className = "" }) {
       );
 
       const influence = Math.exp(
-        -(difference * difference) / 0.16
+        -(difference * difference) / 0.30
       );
 
       const px = cx + Math.cos(theta) * radius + x * influence;
@@ -81,8 +81,8 @@ function HalfReveal({ className = "" }) {
 
     setDeform({
       angle: dragRef.current.angle,
-      x: Math.max(-110, Math.min(110, dx)),
-      y: Math.max(-110, Math.min(110, dy)),
+      x: Math.max(-180, Math.min(180, dx * 1.8)),
+      y: Math.max(-180, Math.min(180, dy * 1.8)),
     });
   };
 
@@ -99,11 +99,11 @@ function HalfReveal({ className = "" }) {
     let vy = 0;
 
     const spring = () => {
-      vx += -x * 0.12;
-      vy += -y * 0.12;
+     vx += -x * 0.09;
+vy += -y * 0.09;
 
-      vx *= 0.78;
-      vy *= 0.78;
+vx *= 0.84;
+vy *= 0.84;
 
       x += vx;
       y += vy;
@@ -156,19 +156,19 @@ function HalfReveal({ className = "" }) {
       onPointerCancel={handlePointerUp}
     >
       <defs>
-        <pattern
-          id={patternId}
-          width="4"
-          height="4"
-          patternUnits="userSpaceOnUse"
-        >
-          <circle
-            cx="2"
-            cy="2"
-            r="2.2"
-            fill="var(--rose-text)"
-          />
-        </pattern>
+       <pattern
+  id={patternId}
+  width="5"
+  height="5"
+  patternUnits="userSpaceOnUse"
+>
+  <circle
+    cx="2.5"
+    cy="2.5"
+    r="1.5"
+    fill="var(--rose-text)"
+  />
+</pattern>
       </defs>
 
       <path
