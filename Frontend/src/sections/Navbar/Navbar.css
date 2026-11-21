@@ -100,8 +100,8 @@
   border-color: var(--color-primary);
 }
 .rose-navbar__theme {
-  width: 108px;
-  height: 62px;
+  width: 90px;
+  height: 50px;
   padding: 4px;
   flex-shrink: 0;
   border: 1px solid var(--rose-glass-border);
@@ -131,7 +131,7 @@
 .rose-navbar__theme .theme-moon {
   position: absolute;
   top: 50%;
-  left: 12px;
+  left: 8px;
   width: 35px;
   height: 35px;
   display: flex;
@@ -153,7 +153,7 @@
   box-shadow: 0 0 15px rgba(255, 195, 75, 0.8);
 }
 .rose-navbar__theme .theme-moon {
-  left: 58px;
+  left: 46px;
   opacity: 0;
   color: #d9caff;
   background: #51477d;

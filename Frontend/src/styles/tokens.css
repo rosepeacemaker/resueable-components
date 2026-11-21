@@ -3,9 +3,9 @@
   color-scheme: light;
 
   /* Background */
-  --rose-bg: #F1EDFA;
-  --rose-surface: #FFFFFF;
-  --rose-surface-secondary: #EAE4F5;
+  --rose-bg: #F5F2F9;
+  --rose-surface: #FBF9FE;
+ --rose-surface-secondary: #EDE7F5;
 
   /* Glass */
   --rose-glass: rgba(255, 255, 255, 0.65);
