@@ -73,6 +73,9 @@
   font-size: 12px;
 }
 .docs__layout {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: grid;
   grid-template-columns: 64px minmax(0, 1fr) 245px;
   min-height: calc(100vh - 72px);
@@ -112,6 +115,15 @@
   color: var(--rose-muted);
   font-size: 10px;
   letter-spacing: 1px;
+}
+.docs .docs-scene {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 64px;
+  right: 245px;
+  z-index: 0;
+  pointer-events: none;
 }
 .docs__sidebar .docs__sidebar-heading,
 .docs__sidebar .docs__nav-group h3,
@@ -186,6 +198,8 @@
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
   padding: 45px clamp(24px, 5vw, 75px);
 }
 .docs__breadcrumb {
@@ -289,6 +303,8 @@
   line-height: 1.8;
 }
 .docs__right-panel {
+  position: relative;
+  z-index: 2;
   padding: 30px 18px;
   border-left: 1px solid var(--rose-glass-border);
   background: var(--rose-surface);

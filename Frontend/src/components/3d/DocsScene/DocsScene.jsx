@@ -29,11 +29,11 @@ function OrbitalModel() {
   return (
     <group>
       {/* Main glass sphere */}
-      <Float
-        speed={0.7}
-        rotationIntensity={0.15}
-        floatIntensity={0.2}
-      >
+    <Float
+  speed={0.35}
+  rotationIntensity={0.3}
+  floatIntensity={0.45}
+>
         <group ref={modelRef}>
           <mesh>
             <sphereGeometry args={[1.15, 96, 96]} />
@@ -132,7 +132,9 @@ function DocsScene() {
           intensity={10}
         />
 
-        <OrbitalModel />
+  <group scale={0.85} position={[0, 0, 0]}>
+  <OrbitalModel />
+</group>
       </Canvas>
     </div>
   );

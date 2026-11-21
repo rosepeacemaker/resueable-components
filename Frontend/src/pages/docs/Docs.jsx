@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import "./Docs.scss";
+import DocsScene from "../../components/3d/DocsScene/DocsScene";
 import { navigation } from "../../config/docsNavigation";
 
 
@@ -64,6 +65,7 @@ function Docs() {
             </div>
           ))}
         </aside>
+        <DocsScene />
 
         {/* CENTER CONTENT */}
         <section className="docs__content">
