@@ -1,29 +1,10 @@
 
 import { useState } from "react";
 import "./Docs.scss";
+import { navigation } from "../../config/docsNavigation";
 
-const navigation = [
-  {
-    title: "GET STARTED",
-    items: ["Introduction", "Installation", "Quick Start"],
-  },
-  {
-    title: "FOUNDATIONS",
-    items: ["Colors", "Typography", "Spacing", "Shadows", "CSS Variables"],
-  },
-  {
-    title: "COMPONENTS",
-    items: ["Buttons", "Cards", "Inputs", "Navigation", "Feedback"],
-  },
-  {
-    title: "ANIMATIONS",
-    items: ["Hover Effects", "Transitions", "GSAP Animations"],
-  },
-  {
-    title: "3D & INTERACTIONS",
-    items: ["3D Components", "Half Reveal", "Cursor Effects"],
-  },
-];
+
+
 
 function Docs() {
   const [activeItem, setActiveItem] = useState("Introduction");
@@ -64,17 +45,22 @@ function Docs() {
             <div className="docs__nav-group" key={group.title}>
               <h3>{group.title}</h3>
 
-              {group.items.map((item) => (
-                <button
-                  key={item}
-                  className={`docs__nav-item ${
-                    activeItem === item ? "active" : ""
-                  }`}
-                  onClick={() => setActiveItem(item)}
-                >
-                  {item}
-                </button>
-              ))}
+              {group.items.map((item) => {
+  const Icon = item.icon;
+
+  return (
+    <button
+      key={item.label}
+      className={`docs__nav-item ${
+        activeItem === item.label ? "active" : ""
+      }`}
+      onClick={() => setActiveItem(item.label)}
+    >
+      <Icon size={17} strokeWidth={1.8} />
+      <span>{item.label}</span>
+    </button>
+  );
+})}
             </div>
           ))}
         </aside>
