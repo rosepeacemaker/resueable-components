@@ -125,48 +125,188 @@
       border-color: var(--color-primary);
     }
   }
+
   &__theme {
-  width: 46px;
-  height: 46px;
-  border: 1px solid var(--rose-glass-border);
-  border-radius: 50%;
-  background: var(--rose-glass);
-  color: var(--rose-text);
-  font-size: 27px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-    display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
+    width: 108px;
+    height: 62px;
+    padding: 4px;
+    flex-shrink: 0;
 
-  // addiotnal//
-  .theme-icon {
-  width: 25px;
-  height: 25px;
-  stroke-width: 1.8;
-  transition: transform 0.4s ease;
-}
+    border: 1px solid var(--rose-glass-border);
+    border-radius: 40px;
+    background: var(--rose-glass);
 
-.moon-icon {
-  color: #C4B5FD;
-  filter: drop-shadow(0 0 5px rgba(196, 181, 253, 0.6));
-}
+    cursor: pointer;
+    transition: box-shadow 0.35s ease, transform 0.35s ease;
 
-.sun-icon {
-  color: #A18BCB;
-  filter: drop-shadow(0 0 5px rgba(161, 139, 203, 0.45));
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-&:hover .theme-icon {
-  transform: rotate(25deg) scale(1.12);
-}
+    &:hover {
+      transform: scale(1.06);
+      box-shadow: var(--rose-shadow);
+    }
 
-  &:hover {
-    transform: rotate(20deg);
-    box-shadow: var(--rose-shadow);
+    .theme-scene {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 35px;
+
+      background: linear-gradient(
+        135deg,
+        #83c9f4,
+        #d9eaff 55%,
+        #f6dcae
+      );
+
+      transition: background 0.6s ease;
+    }
+
+    .theme-sun,
+    .theme-moon {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      width: 35px;
+      height: 35px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+      transform: translateY(-50%);
+      transition: all 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+
+      svg {
+        width: 25px;
+        height: 25px;
+        stroke-width: 1.8;
+      }
+    }
+
+    .theme-sun {
+      color: #e99b27;
+      background: #fff2c5;
+      box-shadow: 0 0 15px rgba(255, 195, 75, 0.8);
+    }
+
+    .theme-moon {
+      left: 58px;
+      opacity: 0;
+      color: #d9caff;
+      background: #51477d;
+      box-shadow: 0 0 14px rgba(188, 164, 255, 0.5);
+      transform: translate(12px, -50%) rotate(-35deg);
+    }
+
+    .theme-cloud {
+      position: absolute;
+      height: 10px;
+      width: 29px;
+      border-radius: 20px;
+      background: #fff;
+      opacity: 0.9;
+      transition: all 0.5s ease;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 3px;
+        border-radius: 50%;
+        background: inherit;
+      }
+
+      &::before {
+        width: 13px;
+        height: 13px;
+        left: 5px;
+      }
+
+      &::after {
+        width: 10px;
+        height: 10px;
+        right: 4px;
+      }
+    }
+
+    .cloud-one {
+      right: 7px;
+      bottom: 13px;
+    }
+
+    .cloud-two {
+      right: 24px;
+      top: 12px;
+      transform: scale(0.65);
+    }
+
+    .theme-stars {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+
+      i {
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: #fff;
+
+        &:nth-child(1) {
+          top: 12px;
+          right: 13px;
+        }
+
+        &:nth-child(2) {
+          top: 35px;
+          right: 31px;
+        }
+
+        &:nth-child(3) {
+          top: 17px;
+          right: 40px;
+        }
+      }
+    }
+
+    &.is-dark {
+      .theme-scene {
+        background: linear-gradient(
+          135deg,
+          #15142e,
+          #302650 60%,
+          #51477d
+        );
+      }
+
+      .theme-sun {
+        opacity: 0;
+        transform: translate(-15px, -50%) rotate(90deg);
+      }
+
+      .theme-moon {
+        opacity: 1;
+        transform: translate(0, -50%) rotate(0);
+      }
+
+      .theme-cloud {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      .theme-stars {
+        opacity: 1;
+      }
+    }
   }
-}
+
 
 
   // Hamburger button

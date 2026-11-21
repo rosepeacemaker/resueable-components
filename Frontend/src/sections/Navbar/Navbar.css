@@ -100,40 +100,143 @@
   border-color: var(--color-primary);
 }
 .rose-navbar__theme {
-  width: 46px;
-  height: 46px;
+  width: 108px;
+  height: 62px;
+  padding: 4px;
+  flex-shrink: 0;
   border: 1px solid var(--rose-glass-border);
-  border-radius: 50%;
+  border-radius: 40px;
   background: var(--rose-glass);
-  color: var(--rose-text);
-  font-size: 27px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-flex;
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+  display: flex;
   align-items: center;
   justify-content: center;
-  line-height: 1;
 }
-.rose-navbar__theme .theme-icon {
+.rose-navbar__theme:hover {
+  transform: scale(1.06);
+  box-shadow: var(--rose-shadow);
+}
+.rose-navbar__theme .theme-scene {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 35px;
+  background: linear-gradient(135deg, #83c9f4, #d9eaff 55%, #f6dcae);
+  transition: background 0.6s ease;
+}
+.rose-navbar__theme .theme-sun,
+.rose-navbar__theme .theme-moon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: all 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.rose-navbar__theme .theme-sun svg,
+.rose-navbar__theme .theme-moon svg {
   width: 25px;
   height: 25px;
   stroke-width: 1.8;
-  transition: transform 0.4s ease;
 }
-.rose-navbar__theme .moon-icon {
-  color: #C4B5FD;
-  filter: drop-shadow(0 0 5px rgba(196, 181, 253, 0.6));
+.rose-navbar__theme .theme-sun {
+  color: #e99b27;
+  background: #fff2c5;
+  box-shadow: 0 0 15px rgba(255, 195, 75, 0.8);
 }
-.rose-navbar__theme .sun-icon {
-  color: #A18BCB;
-  filter: drop-shadow(0 0 5px rgba(161, 139, 203, 0.45));
+.rose-navbar__theme .theme-moon {
+  left: 58px;
+  opacity: 0;
+  color: #d9caff;
+  background: #51477d;
+  box-shadow: 0 0 14px rgba(188, 164, 255, 0.5);
+  transform: translate(12px, -50%) rotate(-35deg);
 }
-.rose-navbar__theme:hover .theme-icon {
-  transform: rotate(25deg) scale(1.12);
+.rose-navbar__theme .theme-cloud {
+  position: absolute;
+  height: 10px;
+  width: 29px;
+  border-radius: 20px;
+  background: #fff;
+  opacity: 0.9;
+  transition: all 0.5s ease;
 }
-.rose-navbar__theme:hover {
-  transform: rotate(20deg);
-  box-shadow: var(--rose-shadow);
+.rose-navbar__theme .theme-cloud::before, .rose-navbar__theme .theme-cloud::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  border-radius: 50%;
+  background: inherit;
+}
+.rose-navbar__theme .theme-cloud::before {
+  width: 13px;
+  height: 13px;
+  left: 5px;
+}
+.rose-navbar__theme .theme-cloud::after {
+  width: 10px;
+  height: 10px;
+  right: 4px;
+}
+.rose-navbar__theme .cloud-one {
+  right: 7px;
+  bottom: 13px;
+}
+.rose-navbar__theme .cloud-two {
+  right: 24px;
+  top: 12px;
+  transform: scale(0.65);
+}
+.rose-navbar__theme .theme-stars {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.rose-navbar__theme .theme-stars i {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #fff;
+}
+.rose-navbar__theme .theme-stars i:nth-child(1) {
+  top: 12px;
+  right: 13px;
+}
+.rose-navbar__theme .theme-stars i:nth-child(2) {
+  top: 35px;
+  right: 31px;
+}
+.rose-navbar__theme .theme-stars i:nth-child(3) {
+  top: 17px;
+  right: 40px;
+}
+.rose-navbar__theme.is-dark .theme-scene {
+  background: linear-gradient(135deg, #15142e, #302650 60%, #51477d);
+}
+.rose-navbar__theme.is-dark .theme-sun {
+  opacity: 0;
+  transform: translate(-15px, -50%) rotate(90deg);
+}
+.rose-navbar__theme.is-dark .theme-moon {
+  opacity: 1;
+  transform: translate(0, -50%) rotate(0);
+}
+.rose-navbar__theme.is-dark .theme-cloud {
+  opacity: 0;
+  transform: translateY(12px);
+}
+.rose-navbar__theme.is-dark .theme-stars {
+  opacity: 1;
 }
 .rose-navbar__toggle {
   display: none;

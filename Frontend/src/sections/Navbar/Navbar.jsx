@@ -54,17 +54,35 @@ const toggleTheme = () => {
         <a href="#docs" onClick={closeMenu}>Documentation</a>
         <a href="#ai" onClick={closeMenu}>Alpha AI</a>
       </nav>
-      <button
-  className="rose-navbar__theme"
+     
+<button
+  className={`rose-navbar__theme ${
+    theme === "dark" ? "is-dark" : "is-light"
+  }`}
   onClick={toggleTheme}
   aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
+  aria-pressed={theme === "dark"}
 >
- {theme === "dark" ? (
-  <MoonStar className="theme-icon moon-icon" />
-) : (
-  <Sun className="theme-icon sun-icon" />
-)}
+  <span className="theme-scene">
+    <span className="theme-sun">
+      <Sun />
+    </span>
+
+    <span className="theme-moon">
+      <MoonStar />
+    </span>
+
+    <span className="theme-cloud cloud-one" />
+    <span className="theme-cloud cloud-two" />
+
+    <span className="theme-stars">
+      <i />
+      <i />
+      <i />
+    </span>
+  </span>
 </button>
+
 
       <a
         href="https://github.com/rosepeacemaker"
