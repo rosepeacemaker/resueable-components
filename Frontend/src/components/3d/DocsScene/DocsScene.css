@@ -1,0 +1,13 @@
+.docs-scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.docs-scene canvas {
+  width: 100% !important;
+  height: 100% !important;
+}/*# sourceMappingURL=DocsScene.css.map */
