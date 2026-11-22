@@ -40,17 +40,17 @@ function OrbitalModel() {
         <group ref={modelRef}>
           <mesh>
             <sphereGeometry args={[1.15, 96, 96]} />
-            <meshPhysicalMaterial
-  color="#d9d3ff"
+  <meshPhysicalMaterial
+  color="#d8c8ff"
   metalness={0.05}
-  roughness={0.035}
-  transmission={1}
-  thickness={2.5}
-  ior={1.45}
+  roughness={0.045}
+  transmission={0.95}
+  thickness={1.4}
+  ior={1.25}
   clearcoat={1}
-  clearcoatRoughness={0.02}
-  attenuationColor="#9b8cff"
-  attenuationDistance={2}
+  clearcoatRoughness={0.04}
+  attenuationColor="#cbb8ff"
+  attenuationDistance={2.5}
   transparent
   opacity={1}
 />
@@ -59,15 +59,15 @@ function OrbitalModel() {
           {/* Inner glowing core */}
  <mesh scale={0.48}>
   <icosahedronGeometry args={[1, 5]} />
-  <meshPhysicalMaterial
-    color="#c4b5fd"
-    emissive="#8b78c8"
-    emissiveIntensity={0.18}
-    roughness={0.28}
-    metalness={0.25}
-    clearcoat={1}
-    clearcoatRoughness={0.12}
-  />
+ <meshPhysicalMaterial
+  color="#e5dcff"
+  emissive="#b9a8e8"
+  emissiveIntensity={0.08}
+  roughness={0.32}
+  metalness={0.12}
+  clearcoat={1}
+  clearcoatRoughness={0.12}
+/>
 </mesh>
         </group>
       </Float>

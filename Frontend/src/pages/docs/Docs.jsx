@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./Docs.scss";
 import DocsScene from "../../components/3d/DocsScene/DocsScene";
 import { navigation } from "../../config/docsNavigation";
+import ComponentPlayground from "./componentsPlayground/ComponentPlayground";
 
 
 
@@ -96,19 +97,9 @@ function Docs() {
             </p>
           </section>
 
-          <section className="docs__section">
-            <h2>Live Preview</h2>
-
-            <div className="docs__preview">
-              <div className="docs__preview-label">
-                COMPONENT PREVIEW
-              </div>
-
-              <button className="docs__demo-button">
-                Explore Component
-              </button>
-            </div>
-          </section>
+         <section className="docs__section">
+  <ComponentPlayground />
+</section>
 
           <section className="docs__section">
             <h2>Usage</h2>
