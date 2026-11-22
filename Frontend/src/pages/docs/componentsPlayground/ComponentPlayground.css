@@ -1,0 +1,163 @@
+.component-playground {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  color: var(--rose-text);
+}
+.component-playground .playground__header h2 {
+  margin: 10px 0 6px;
+  font-size: 26px;
+  font-weight: 650;
+  letter-spacing: -0.8px;
+}
+.component-playground .playground__header p {
+  margin: 0;
+  color: var(--rose-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.component-playground .playground__eyebrow {
+  color: var(--rose-primary);
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 1.8px;
+}
+.component-playground .playground__tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 1px solid var(--rose-glass-border);
+  background: var(--rose-glass);
+  border-radius: 12px;
+}
+.component-playground .playground__tabs button {
+  border: none;
+  background: transparent;
+  color: var(--rose-muted);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+.component-playground .playground__tabs button:hover {
+  color: var(--rose-primary);
+}
+.component-playground .playground__tabs button.active {
+  background: var(--rose-primary);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(113, 85, 168, 0.2);
+}
+.component-playground .playground__workspace {
+  min-height: 290px;
+  padding: 28px;
+  border: 1px solid var(--rose-glass-border);
+  border-radius: 18px;
+  background: var(--rose-glass);
+  box-shadow: var(--rose-shadow);
+  backdrop-filter: blur(18px);
+}
+.component-playground .playground__preview {
+  min-height: 230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, rgba(161, 139, 203, 0.12), transparent 65%);
+}
+.component-playground .playground__preview button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(113, 85, 168, 0.22);
+}
+.component-playground .playground__controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.component-playground .playground__controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--rose-text);
+  font-size: 13px;
+  font-weight: 600;
+}
+.component-playground .playground__controls input,
+.component-playground .playground__controls select {
+  width: 100%;
+  min-height: 42px;
+  padding: 9px 12px;
+  border: 1px solid var(--rose-glass-border);
+  border-radius: 9px;
+  outline: none;
+  background: var(--rose-surface);
+  color: var(--rose-text);
+  font: inherit;
+  font-size: 13px;
+  transition: border-color 0.2s ease;
+}
+.component-playground .playground__controls input:focus,
+.component-playground .playground__controls select:focus {
+  border-color: var(--rose-primary);
+}
+.component-playground .playground__controls input[type=color] {
+  padding: 4px;
+  cursor: pointer;
+}
+.component-playground .playground__controls input[type=range] {
+  accent-color: var(--rose-primary);
+  cursor: pointer;
+}
+.component-playground .playground__code {
+  position: relative;
+}
+.component-playground .playground__code > button {
+  display: block;
+  margin-left: auto;
+  padding: 9px 16px;
+  border: 1px solid var(--rose-glass-border);
+  border-radius: 8px;
+  background: var(--rose-primary);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.component-playground .playground__code > button:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+.component-playground .playground__code pre {
+  margin: 16px 0 0;
+  padding: 22px;
+  overflow-x: auto;
+  border: 1px solid var(--rose-glass-border);
+  border-radius: 12px;
+  background: #171526;
+  color: #e5ddff;
+  font-size: 12px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .component-playground .playground__workspace {
+    padding: 16px;
+  }
+  .component-playground .playground__controls {
+    grid-template-columns: 1fr;
+  }
+  .component-playground .playground__tabs {
+    width: 100%;
+  }
+  .component-playground .playground__tabs button {
+    flex: 1;
+    padding: 10px;
+  }
+}/*# sourceMappingURL=ComponentPlayground.css.map */
