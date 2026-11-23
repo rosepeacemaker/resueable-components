@@ -5,16 +5,38 @@ import DocsScene from "../../components/3d/DocsScene/DocsScene";
 import { navigation } from "../../config/docsNavigation";
 import ComponentPlayground from "./componentsPlayground/ComponentPlayground";
 
-
-
-
 function Docs() {
   const [activeItem, setActiveItem] = useState("Introduction");
 
+  const features = [
+    {
+      icon: "✧",
+      title: "Modern Design",
+      description: "Clean and elegant UI",
+      color: "violet",
+    },
+    {
+      icon: "◉",
+      title: "Fully Customizable",
+      description: "Make it your own",
+      color: "aqua",
+    },
+    {
+      icon: "⬡",
+      title: "3D Components",
+      description: "Next-level interactions",
+      color: "purple",
+    },
+    {
+      icon: "✦",
+      title: "Developer Friendly",
+      description: "Easy to integrate",
+      color: "blue",
+    },
+  ];
+
   return (
     <main className="docs">
-
-      {/* TOP HEADER */}
       <header className="docs__header">
         <div className="docs__brand">
           <span className="docs__brand-icon">A</span>
@@ -26,18 +48,20 @@ function Docs() {
           <button className="docs__search">
             <span>⌕</span>
             Search documentation...
-            <kbd>⌘ K</kbd>
+            <kbd>Ctrl K</kbd>
           </button>
 
-          <button className="docs__icon-btn">☼</button>
-          <button className="docs__github">GitHub ↗</button>
+          <button className="docs__icon-btn" aria-label="Theme">
+            ☼
+          </button>
+
+          <button className="docs__github">
+            GitHub ↗
+          </button>
         </div>
       </header>
 
-      {/* MAIN DOCUMENTATION AREA */}
       <div className="docs__layout">
-
-        {/* LEFT SIDEBAR */}
         <aside className="docs__sidebar">
           <div className="docs__sidebar-heading">
             DOCUMENTATION
@@ -48,66 +72,145 @@ function Docs() {
               <h3>{group.title}</h3>
 
               {group.items.map((item) => {
-  const Icon = item.icon;
+                const Icon = item.icon;
 
-  return (
-    <button
-      key={item.label}
-      className={`docs__nav-item ${
-        activeItem === item.label ? "active" : ""
-      }`}
-      onClick={() => setActiveItem(item.label)}
-    >
-      <Icon size={17} strokeWidth={1.8} />
-      <span>{item.label}</span>
-    </button>
-  );
-})}
+                return (
+                  <button
+                    key={item.label}
+                    className={`docs__nav-item ${
+                      activeItem === item.label ? "active" : ""
+                    }`}
+                    onClick={() => setActiveItem(item.label)}
+                  >
+                    <Icon size={17} strokeWidth={1.8} />
+                    <span>{item.label}</span>
+                  </button>
+                );
+              })}
             </div>
           ))}
-        </aside>
-        <DocsScene />
 
-        {/* CENTER CONTENT */}
+          <div className="docs__sidebar-card">
+            <span className="docs__sidebar-star">✦</span>
+            <strong>Build Something Amazing</strong>
+            <p>With ALPHA UI</p>
+            <button onClick={() => setActiveItem("Buttons")}>
+              Get Started →
+            </button>
+          </div>
+        </aside>
+
         <section className="docs__content">
           <div className="docs__breadcrumb">
-            ALPHA UI / DOCUMENTATION / {activeItem.toUpperCase()}
+            ALPHA UI <span>/</span> DOCUMENTATION <span>/</span>{" "}
+            {activeItem.toUpperCase()}
           </div>
 
-          <div className="docs__intro">
-            <span className="docs__eyebrow">ALPHA UI LIBRARY</span>
+          <section className="docs__hero">
+            <DocsScene />
 
-            <h1>{activeItem}</h1>
+            <div className="docs__hero-copy">
+              <span className="docs__eyebrow">
+                ✦ &nbsp; WELCOME TO <span>ALPHA UI</span>
+              </span>
 
-            <p>
-              Explore, understand and customize reusable UI
-              elements built for modern web applications.
-            </p>
-          </div>
+              <h1>
+                {activeItem === "Introduction" ? (
+                  <>
+                    Introduction to
+                    <br />
+                    ALPHA <span>UI</span>
+                  </>
+                ) : (
+                  activeItem
+                )}
+              </h1>
 
-          <div className="docs__content-divider" />
+              <p>
+                A modern, flexible and beautifully designed UI library
+                for your next project. Build faster, create better.
+              </p>
 
-          <section className="docs__section">
-            <h2>Overview</h2>
+              <div className="docs__hero-actions">
+                <button
+                  className="docs__primary-btn"
+                  onClick={() => setActiveItem("Installation")}
+                >
+                  Get Started <span>→</span>
+                </button>
 
-            <p>
-              Welcome to ALPHA UI. This documentation helps you
-              explore reusable components, understand their
-              functionality and integrate them into your projects.
-            </p>
+                <button
+                  className="docs__secondary-btn"
+                  onClick={() => setActiveItem("3D Components")}
+                >
+                  <span>▶</span> Watch Demo
+                </button>
+              </div>
+            </div>
           </section>
 
-         <section className="docs__section">
-  <ComponentPlayground />
-</section>
+          <section className="docs__overview-card" id="overview">
+            <div className="docs__overview-copy">
+              <h2><span>✦</span> What is ALPHA UI?</h2>
+              <p>
+                ALPHA UI is a modern React component library, designed
+                to help you build stunning web applications with ease.
+                From beautiful components to smooth animations, ALPHA UI
+                brings your ideas to life.
+              </p>
+            </div>
 
-          <section className="docs__section">
+            <div className="docs__overview-art">
+              <div className="docs__wave docs__wave-one" />
+              <div className="docs__wave docs__wave-two" />
+              <div className="docs__wave docs__wave-three" />
+            </div>
+          </section>
+
+          <section className="docs__features">
+            <h2><span>⬡</span> Key Features</h2>
+
+            <div className="docs__feature-grid">
+              {features.map((feature) => (
+                <article
+                  className={`docs__feature-card ${feature.color}`}
+                  key={feature.title}
+                >
+                  <span className="docs__feature-icon">
+                    {feature.icon}
+                  </span>
+                  <h3>{feature.title}</h3>
+                  <p>{feature.description}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="docs__playground-section" id="preview">
+            <div className="docs__section-heading">
+              <span>INTERACTIVE PLAYGROUND</span>
+              <h2>Explore the components</h2>
+              <p>
+                Customize components, preview your changes and
+                generate code for your project.
+              </p>
+            </div>
+
+            <ComponentPlayground />
+          </section>
+
+          <section className="docs__section" id="usage">
             <h2>Usage</h2>
+
+            <p>
+              Import reusable components into your React application
+              and start building.
+            </p>
 
             <div className="docs__code">
               <div className="docs__code-header">
                 <span>Example.jsx</span>
-                <button>Copy</button>
+                <span>JSX</span>
               </div>
 
               <pre>
@@ -115,52 +218,13 @@ function Docs() {
 
 function App() {
   return <Component />;
-}`}</code>
+}
+
+export default App;`}</code>
               </pre>
             </div>
           </section>
         </section>
-
-        {/* RIGHT PANEL */}
-        <aside className="docs__right-panel">
-
-          <div className="docs__panel-heading">
-            <span>ON THIS PAGE</span>
-          </div>
-
-          <nav className="docs__page-links">
-            <a href="#overview">Overview</a>
-            <a href="#preview">Live Preview</a>
-            <a href="#usage">Usage</a>
-          </nav>
-
-          <div className="docs__ai-card">
-            <div className="docs__ai-title">
-              <span className="docs__ai-icon">✦</span>
-              <span>AI Assistant</span>
-              <span className="docs__ai-status" />
-            </div>
-
-            <p>
-              Need help with {activeItem.toLowerCase()}?
-              Ask AI for guidance and code explanations.
-            </p>
-
-            <button className="docs__ai-suggestion">
-              Explain this page <span>↗</span>
-            </button>
-
-            <div className="docs__ai-input">
-              <span>Ask anything...</span>
-              <button>↑</button>
-            </div>
-
-            <span className="docs__ai-note">
-              AI assistance coming soon
-            </span>
-          </div>
-
-        </aside>
       </div>
     </main>
   );
