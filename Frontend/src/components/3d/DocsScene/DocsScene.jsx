@@ -152,11 +152,11 @@ function DocsScene() {
   return (
     <div className="docs-scene">
       <Canvas
-       camera={{ position: [0, 0, 7], fov: 42 }}
+       camera={{ position: [0, 0, 7.5], fov: 42 }}
         dpr={[1, 1.5]}
         gl={{ alpha: true, antialias: true }}
       >
-        <fog attach="fog" args={["#111426", 5, 13]} />
+       <fog attach="fog" args={["#171426", 7, 16]} />
         <ambientLight intensity={0.45} />
 
 <hemisphereLight

@@ -269,6 +269,8 @@ overflow: hidden;
 
   &__intro {
     margin-bottom: 35px;
+    position: relative;
+z-index: 1;
 
     h1 {
       margin: 12px 0;
@@ -299,6 +301,8 @@ overflow: hidden;
 
   &__section {
     margin-bottom: 38px;
+    position: relative;
+z-index: 1;
 
     h2 {
       margin-bottom: 14px;
