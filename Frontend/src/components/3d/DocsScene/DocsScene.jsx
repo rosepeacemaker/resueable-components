@@ -16,14 +16,14 @@ function OrbitalModel() {
 
   useFrame((state, delta) => {
     if (modelRef.current) {
-      modelRef.current.rotation.y += delta * 0.12;
+      modelRef.current.rotation.y += delta * 0.08;
       modelRef.current.rotation.x =
         Math.sin(state.clock.elapsedTime * 0.2) * 0.08;
     }
 
    if (ringsRef.current) {
-  ringsRef.current.rotation.y += delta * 0.055;
-  ringsRef.current.rotation.z += delta * 0.025;
+  ringsRef.current.rotation.y += delta * 0.035;
+  ringsRef.current.rotation.z += delta * 0.018;
   ringsRef.current.rotation.x =
     Math.sin(state.clock.elapsedTime * 0.18) * 0.12;
 }

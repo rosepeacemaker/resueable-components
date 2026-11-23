@@ -193,11 +193,13 @@ overflow: hidden;
     }
 
     &.active {
-      background: rgba(167, 139, 250, 0.18);
-      color: #d8caff;
+     background: rgba(139, 107, 203, 0.16);
+  color: #7155A8;
+  font-weight: 600;
 
       svg {
-        color: #c4b5fd;
+          opacity: 1;
+    color: #8B6BCB;
       }
     }
   }
@@ -236,8 +238,8 @@ overflow: hidden;
   }
 
   &:hover {
-    background: rgba(167, 139, 250, 0.1);
-    color: var(--rose-primary);
+     background: rgba(103, 201, 216, 0.10);
+  color: #7155A8;
   }
 
   &.active {

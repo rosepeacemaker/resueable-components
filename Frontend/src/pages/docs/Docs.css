@@ -155,11 +155,13 @@
   color: #a99bcf;
 }
 .docs__sidebar .docs__nav-item.active {
-  background: rgba(167, 139, 250, 0.18);
-  color: #d8caff;
+  background: rgba(139, 107, 203, 0.16);
+  color: #7155A8;
+  font-weight: 600;
 }
 .docs__sidebar .docs__nav-item.active svg {
-  color: #c4b5fd;
+  opacity: 1;
+  color: #8B6BCB;
 }
 .docs .docs__nav-item {
   width: 100%;
@@ -186,8 +188,8 @@
   line-height: 1.4;
 }
 .docs .docs__nav-item:hover {
-  background: rgba(167, 139, 250, 0.1);
-  color: var(--rose-primary);
+  background: rgba(103, 201, 216, 0.1);
+  color: #7155A8;
 }
 .docs .docs__nav-item.active {
   background: rgba(167, 139, 250, 0.15);

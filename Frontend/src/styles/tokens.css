@@ -17,6 +17,28 @@
   --rose-secondary: #67C9D8;
   --rose-accent: #A18BCB;
 
+  /* Additional UI Colors */
+  --rose-violet: #8B6BCB;
+  --rose-lilac: #D9CCF4;
+  --rose-aqua: #67C9D8;
+  --rose-soft-blue: #DCECF5;
+  --rose-highlight: #F0EAFE;
+
+  /* Gradient Accents */
+  --rose-gradient: linear-gradient(
+    135deg,
+    #7155A8,
+    #A18BCB,
+    #67C9D8
+  );
+
+  --rose-gradient-soft: linear-gradient(
+    135deg,
+    #F0EAFE,
+    #E4F5F7
+  );
+
+
   /* Text */
   --rose-text: #17151D;
   --rose-muted: #6F687A;
