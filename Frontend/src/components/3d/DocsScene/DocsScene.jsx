@@ -182,7 +182,7 @@ function DocsScene() {
   intensity={4}
 />
 
- <group scale={0.72} position={[0, 0, -0.6]}>
+ <group scale={1.05} position={[0, 0, -0.6]}>
   <OrbitalModel />
 </group>
       </Canvas>
