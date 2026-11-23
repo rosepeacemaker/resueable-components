@@ -98,6 +98,11 @@ overflow: hidden;
     grid-template-columns: 205px minmax(0, 1fr) 245px;
   }
 }
+&:has(.docs__sidebar:hover) {
+  .docs-scene {
+    left: 205px;
+  }
+}
 
 &__sidebar {
   position: relative;

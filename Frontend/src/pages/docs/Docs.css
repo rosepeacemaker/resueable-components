@@ -84,6 +84,9 @@
 .docs__layout:has(.docs__sidebar:hover) {
   grid-template-columns: 205px minmax(0, 1fr) 245px;
 }
+.docs:has(.docs__sidebar:hover) .docs-scene {
+  left: 205px;
+}
 .docs__sidebar {
   position: relative;
   z-index: 10;
