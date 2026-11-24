@@ -396,26 +396,45 @@ flex-direction: column;
 
   // OVERVIEW
 
-  &__overview-card {
-    position: relative;
-    z-index: 2;
-    min-height: 170px;
-    padding: 25px 28px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-    overflow: hidden;
-    border: 1px solid rgba(177, 147, 235, 0.2);
-    border-radius: 22px;
-    background: linear-gradient(
+ 
+&__overview-card {
+  position: relative;
+  z-index: 2;
+  min-height: 170px;
+  padding: 25px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  overflow: hidden;
+
+  border: 1px solid rgba(177, 147, 235, 0.3);
+  border-radius: 22px;
+
+  background:
+    radial-gradient(
+      ellipse at 95% 15%,
+      rgba(103, 201, 216, 0.16),
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse at 5% 100%,
+      rgba(145, 100, 220, 0.2),
+      transparent 45%
+    ),
+    linear-gradient(
       115deg,
-      rgba(37, 30, 57, 0.88),
-      rgba(24, 27, 48, 0.9)
+      rgba(37, 30, 57, 0.94),
+      rgba(24, 27, 48, 0.92)
     );
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
-    backdrop-filter: blur(16px);
-  }
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  backdrop-filter: blur(18px);
+}
+
 
   &__overview-copy {
     max-width: 690px;

@@ -40,26 +40,31 @@ function OrbitalModel() {
         <group ref={modelRef}>
           <mesh>
             <sphereGeometry args={[1.15, 96, 96]} />
-  <meshPhysicalMaterial
-  color="#d8c8ff"
-  metalness={0.05}
-  roughness={0.045}
-  transmission={0.95}
+ 
+<meshPhysicalMaterial
+  color="#c5aaff"
+  emissive="#7650d8"
+  emissiveIntensity={0.22}
+  metalness={0.08}
+  roughness={0.1}
+  transmission={0.82}
   thickness={1.4}
   ior={1.25}
   clearcoat={1}
   clearcoatRoughness={0.04}
-  attenuationColor="#cbb8ff"
-  attenuationDistance={2.5}
+  attenuationColor="#b99aff"
+  attenuationDistance={2}
   transparent
   opacity={1}
 />
+
           </mesh>
 
           {/* Inner glowing core */}
  <mesh scale={0.48}>
   <icosahedronGeometry args={[1, 5]} />
- <meshPhysicalMaterial
+ 
+<meshPhysicalMaterial
   color="#e5dcff"
   emissive="#b9a8e8"
   emissiveIntensity={0.08}
@@ -68,6 +73,7 @@ function OrbitalModel() {
   clearcoat={1}
   clearcoatRoughness={0.12}
 />
+
 </mesh>
         </group>
       </Float>
@@ -152,7 +158,7 @@ function DocsScene() {
   return (
     <div className="docs-scene">
       <Canvas
-       camera={{ position: [0, 0, 7.5], fov: 42 }}
+       camera={{ position: [0, 0, 6.5], fov: 42 }}
         dpr={[1, 1.5]}
         gl={{ alpha: true, antialias: true }}
       >
@@ -182,7 +188,7 @@ function DocsScene() {
   intensity={4}
 />
 
- <group scale={1.05} position={[0, 0, -0.6]}>
+ <group scale={1.2} position={[0, 0, -0.6]}>
   <OrbitalModel />
 </group>
       </Canvas>
