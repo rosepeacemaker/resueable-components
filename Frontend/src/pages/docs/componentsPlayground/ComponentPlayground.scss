@@ -62,15 +62,32 @@
     }
   }
 
-  .playground__workspace {
-    min-height: 290px;
-    padding: 28px;
-    border: 1px solid var(--rose-glass-border);
-    border-radius: 18px;
-    background: var(--rose-glass);
-    box-shadow: var(--rose-shadow);
-    backdrop-filter: blur(18px);
-  }
+
+.playground__workspace {
+  min-height: 290px;
+  padding: 28px;
+  border: 1px solid rgba(177, 147, 235, 0.24);
+  border-radius: 18px;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(103, 201, 216, 0.08),
+      transparent 45%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(35, 29, 53, 0.96),
+      rgba(22, 23, 41, 0.96)
+    );
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  backdrop-filter: blur(18px);
+}
+
 
   .playground__preview {
     min-height: 230px;
