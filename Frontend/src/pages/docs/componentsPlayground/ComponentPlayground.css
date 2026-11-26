@@ -134,45 +134,49 @@
 .component-playground .playground__code > button {
   display: block;
   margin-left: auto;
-  padding: 9px 16px;
-  border: 1px solid var(--rose-glass-border);
-  border-radius: 8px;
-  background: var(--rose-primary);
-  color: #fff;
+  padding: 9px 18px;
+  border: 1px solid rgba(190, 163, 245, 0.35);
+  border-radius: 9px;
+  background: linear-gradient(120deg, #7650c0, #9673d5);
+  color: #ffffff;
   font-size: 12px;
   font-weight: 600;
+  letter-spacing: 0.2px;
   cursor: pointer;
-  transition: 0.2s ease;
+  box-shadow: 0 4px 14px rgba(118, 80, 192, 0.22);
+  transition: all 0.25s ease;
 }
 .component-playground .playground__code > button:hover {
-  opacity: 0.85;
+  background: linear-gradient(120deg, #8962d2, #aa87e8);
+  border-color: rgba(215, 195, 255, 0.55);
+  box-shadow: 0 6px 20px rgba(118, 80, 192, 0.35);
   transform: translateY(-2px);
 }
 .component-playground .playground__code pre {
   margin: 16px 0 0;
-  padding: 22px;
+  padding: 24px;
   overflow-x: auto;
-  border: 1px solid var(--rose-glass-border);
-  border-radius: 12px;
-  background: #171526;
-  color: #e5ddff;
+  border: 1px solid rgba(177, 147, 235, 0.24);
+  border-radius: 14px;
+  background: radial-gradient(circle at 90% 0%, rgba(103, 201, 216, 0.07), transparent 40%), linear-gradient(145deg, #191629, #12111f);
+  color: #e5dcf7;
   font-size: 12px;
-  line-height: 1.8;
+  line-height: 1.9;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
-
 @media (max-width: 600px) {
-  .component-playground .playground__workspace {
+  .component-playground .component-playground .playground__workspace {
     padding: 16px;
   }
-  .component-playground .playground__controls {
+  .component-playground .component-playground .playground__controls {
     grid-template-columns: 1fr;
   }
-  .component-playground .playground__tabs {
+  .component-playground .component-playground .playground__tabs {
     width: 100%;
   }
-  .component-playground .playground__tabs button {
+  .component-playground .component-playground .playground__tabs button {
     flex: 1;
     padding: 10px;
   }
