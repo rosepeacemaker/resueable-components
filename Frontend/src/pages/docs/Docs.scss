@@ -112,14 +112,25 @@ align-self: start;
 
   // SIDEBAR
 
-  &__sidebar {
-    position: relative;
-    display: flex;
-flex-direction: column;
-    isolation: isolate;
-    min-width: 0;
-    padding: 34px 22px;
-    overflow: hidden;
+ &__sidebar {
+  position: sticky;
+  top: 88px;
+  height: calc(100vh - 104px);
+  max-height: calc(100vh - 104px);
+
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  min-width: 0;
+  padding: 34px 22px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  align-self: start;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(177, 147, 235, 0.4) transparent;
    background:
   radial-gradient(ellipse at 0% 8%, rgba(144, 92, 218, 0.38), transparent 43%),
   radial-gradient(ellipse at 100% 42%, rgba(103, 201, 216, 0.24), transparent 42%),
@@ -835,13 +846,16 @@ flex-direction: column;
   min-width: 0;
 }
 
+
 .docs__sidebar {
-  width: 100%;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-  overflow-x: hidden;
+  position: relative;
+  top: auto;
+  height: auto;
+  max-height: none;
+  overflow-y: visible;
+  overscroll-behavior: auto;
 }
+
 
 .docs__nav-group {
   width: 100%;
