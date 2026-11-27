@@ -1,5 +1,6 @@
 import express from "express"
 import cors from "cors"
+import assistantRoutes from "./routes/assistantRoutes.js";
 
 
 const app = express();
@@ -7,6 +8,8 @@ const app = express();
 //middleware
 app.use(cors());
 app.use(express.json());
+// Assistant API Routes
+app.use("/api/assistant", assistantRoutes);
 
 
 
