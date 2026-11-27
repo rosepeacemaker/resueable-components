@@ -1,3 +1,7 @@
+import Chat from  "../models/chat.js";
+
+
+
 export const chatWithAssistant = async (req, res) => {
   try {
     const { message } = req.body;
@@ -9,15 +13,24 @@ export const chatWithAssistant = async (req, res) => {
       });
     }
 
-    res.status(200).json({
+    const newChat = await Chat.create({
+      messages: [
+        {
+          role: "user",
+          content: message,
+        },
+      ],
+    });
+
+    res.status(201).json({
       success: true,
-      message: "Your message was received!",
-      userMessage: message,
+      message: "Message saved successfully!",
+      chat: newChat,
     });
   } catch (error) {
     res.status(500).json({
       success: false,
-      message: "Something went wrong.",
+      message: error.message,
     });
   }
 };
